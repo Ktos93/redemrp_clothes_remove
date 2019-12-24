@@ -1,4 +1,4 @@
-#redemrp_clothes_remove 0.5v
+##redemrp_clothes_remove 0.5v
 
 ## 1. Requirements
 
