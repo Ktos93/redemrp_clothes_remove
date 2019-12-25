@@ -52,10 +52,10 @@ function updateSelection()
             Menu.selection = Menu.from
         end
     elseif IsControlJustPressed(1, Keys["TOP"]) then
-        if (Menu.selection > Menu.from and Menu.selection > 0) then
+        if (Menu.selection >= Menu.from and Menu.selection >  0) then
             Menu.selection = Menu.selection - 1
         else
-            Menu.selection = Menu.from
+            Menu.selection = Menu.to - 1
         end
     elseif IsControlJustPressed(1, Keys["NENTER"])  then
         if Menu.buttonCount > 0 then

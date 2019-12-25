@@ -306,13 +306,12 @@ AddEventHandler('redemrp_clothes_remove:start', function(skin, ubranie)
     local plaszcz = 0
     function Plaszcz()
         if plaszcz == 0 then
-            Citizen.InvokeNative(0xD710A5007C2AC539, PlayerPedId(), 0x662AC34, 0) -- Set target category, here the hash is for hats
+              Citizen.InvokeNative(0xD710A5007C2AC539, PlayerPedId(), 0x662AC34, 0) -- Set target category, here the hash is for hats
+            Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0) -- Actually remove the component
+			 Citizen.InvokeNative(0xD710A5007C2AC539, PlayerPedId(), 0xE06D30CE, 0) -- Set target category, here the hash is for hats
             Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0) -- Actually remove the component
             plaszcz = 1
-            Koszula()
-            Koszula()
-            Kamizelka()
-            Kamizelka()
+        
 
         else
             if  sex_global == 1 then
@@ -323,8 +322,6 @@ AddEventHandler('redemrp_clothes_remove:start', function(skin, ubranie)
             plaszcz = 0
             wartosc = tonumber(_ubranie.plaszcz)
             if wartosc > 1 then
-				hash = ("0x" .. glowna[20])
-				ladowanie(hash)
                 hash = ("0x" .. glowna[wartosc])
                 ladowanie(hash)
             end
